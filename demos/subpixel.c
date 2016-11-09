@@ -126,8 +126,8 @@ void display( GLFWwindow* window )
         glActiveTexture( GL_TEXTURE0 );
         glBindTexture( GL_TEXTURE_2D, font_manager->atlas->id );
 
-        glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
-        glBlendColor( 1, 1, 1, 1 );
+        glBlendFunc( GL_CONSTANT_COLOR,GL_ONE_MINUS_SRC_COLOR );
+        glBlendColor( 0.0, 0.0, 0.0, 1 ); // color for text
 
         vertex_buffer_render( text_buffer->buffer, GL_TRIANGLES );
         glBindTexture( GL_TEXTURE_2D, 0 );
